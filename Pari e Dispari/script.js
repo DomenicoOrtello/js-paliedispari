@@ -15,10 +15,31 @@ function generareNumeroCpu() {
     const numeroCpu = Math.floor(Math.random() * 5) + 1;
     return numeroCpu;
 }
+// Salvo il valore restituito dalla funzione in una variabile
+const numeroCpu = generareNumeroCpu()
 
 // Mostro il numero della Cpu
-alert("Il numero della Cpu è: " + generareNumeroCpu());
+alert("Il numero della Cpu è: " + numeroCpu);
 
 //Sommiamo i due numeri
-const sommaNumeri = generareNumeroCpu() + numeroUtente;
+const sommaNumeri = numeroCpu + numeroUtente;
 alert ("La somma dei numeri è: " + sommaNumeri);
+
+//Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+function stabilirePariDispari(numero) {
+    if (numero % 2 === 0) {
+        return "pari";
+        } else
+        return "dispari";
+}
+alert ("La somma dei numeri è " + stabilirePariDispari(sommaNumeri) + ".");
+
+//Dichiariamo chi ha vinto
+if (stabilirePariDispari(sommaNumeri) === sceltaUtente.toLowerCase()) {
+    alert("Hai vinto!");
+    } else {
+        alert("Hai perso!");
+}
+
+
+    
